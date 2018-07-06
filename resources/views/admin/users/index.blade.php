@@ -1,1 +1,43 @@
-<h1>It's Working</h1>
+@extends('layouts.admin')
+@section('content')
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <i class="fa fa-users fa-fw"></i> Users Table
+        </div>
+        <div class="panel-body">
+    <div class="table-responsive">
+        <table class="table table-bordered table-hover table-striped">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>name</th>
+                    <th>User Role</th>
+                    <th>Active</th>
+                    <th>Email</th>
+                    <th>Created</th>
+                    <th>Updated</th>
+                </tr>
+            </thead>
+            <tbody>
+
+            @if($users)
+            @foreach($users as $user)
+                <tr>
+                    <td>{{$user->id}}</td>
+                    <td>{{$user->name}}</td>
+                    <td>{{$user->role['name']}}</td>
+                    <td>{{$user->is_active == 1 ? 'Active' : 'Inactive'}}</td>
+                    <td>{{$user->email}}</td>
+                    <td>{{$user->created_at->diffForHumans()}}</td>
+                    <td>{{$user->updated_at->diffForHumans()}}</td>
+                </tr>
+                @endforeach
+            @endif
+
+            </tbody>
+        </table>
+    </div>
+    <!-- /.table-responsive -->
+        </div>
+    </div>
+@endsection

@@ -26,10 +26,6 @@
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-    <link href="css/style.css" rel="stylesheet">
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <!--   <script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>-->
-    <script src="js/tinymce/tinymce.min.js" ></script>
 
 </head>
 
@@ -89,6 +85,54 @@
                     </li>
                     <li>
                         <a href="index.html"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-wrench fa-fw"></i> Users<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li>
+                                <a href="#">View</a>
+                            </li>
+                            <li>
+                                <a href="#">Create</a>
+                            </li>
+                        </ul>
+                        <!-- /.nav-second-level -->
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-wrench fa-fw"></i> Posts<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li>
+                                <a href="#">View</a>
+                            </li>
+                            <li>
+                                <a href="#">Create</a>
+                            </li>
+                        </ul>
+                        <!-- /.nav-second-level -->
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-wrench fa-fw"></i> Categories<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li>
+                                <a href="#">View</a>
+                            </li>
+                            <li>
+                                <a href="#">Create</a>
+                            </li>
+                        </ul>
+                        <!-- /.nav-second-level -->
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-wrench fa-fw"></i> Media<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li>
+                                <a href="#">View</a>
+                            </li>
+                            <li>
+                                <a href="#">Create</a>
+                            </li>
+                        </ul>
+                        <!-- /.nav-second-level -->
                     </li>
                     <li>
                         <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Charts<span class="fa arrow"></span></a>
@@ -185,7 +229,6 @@
         <div class="row">
             <div class="col-lg-12">
                 <h1 class="page-header">Admin</h1>
-                @yield('content')
             </div>
             <!-- /.col-lg-12 -->
         </div>
@@ -194,6 +237,8 @@
         <div class="row">
             <div class="col-lg-8">
 
+                {{--  content --}}
+                @yield('content')
 
                 <div class="panel panel-default">
                     <div class="panel-heading">
