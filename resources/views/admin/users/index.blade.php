@@ -12,7 +12,7 @@
                     <th>#</th>
                     <th>name</th>
                     <th>User Role</th>
-                    <th>Active</th>
+                    <th>Status</th>
                     <th>Email</th>
                     <th>Created</th>
                     <th>Updated</th>
