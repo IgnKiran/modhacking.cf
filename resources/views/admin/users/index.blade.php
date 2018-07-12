@@ -5,6 +5,9 @@
             <i class="fa fa-users fa-fw"></i> Users Table
         </div>
         <div class="panel-body">
+            @if(Session::has('deleted_user'))
+                <p class="bg-danger">{{session('deleted_user')}}</p>
+            @endif
     <div class="table-responsive">
         <table class="table table-bordered table-hover table-striped">
             <thead>

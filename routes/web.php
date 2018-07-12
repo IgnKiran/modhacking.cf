@@ -19,10 +19,14 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::resource('/admin/users', 'AdminUserController');
-
-//Route::get('/admin/users/', ['as' => 'admin.users', 'uses' => 'AdminUserController@index']);
-
 Route::get('/admin',function(){
     return view('admin.index');
+});
+
+Route::group(['middleware' => 'admin'], function (){
+    Route::resource('/admin/users', 'AdminUserController');
+});
+
+Route::get('/test/', function (){
+    return view('test.testPage');
 });

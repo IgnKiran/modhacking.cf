@@ -5,13 +5,14 @@
             <i class="fa fa-users fa-fw"></i> Edit user - {{$user->name}}
         </div>
         <div class="panel-body">
-            {!! Form::model($user, ['method' => 'PATCH' ,'action' => ['AdminUserController@update', $user->id], 'files' => true]) !!}
-
             <div class="row">
                 <div class="col-sm-3">
                     <img src="{{$user->photo ? $user->photo->file : 'http://placehold.it/400x400/'}}" alt="" class="img-responsive img-rounded">
                 </div>
                 <div class="col-sm-9">
+            {!! Form::model($user, ['method' => 'PATCH' ,'action' => ['AdminUserController@update', $user->id], 'files' => true]) !!}
+
+
             <div class="form-group">
                 {!! Form::label('name', 'Name') !!}
                 {!! Form::text('name', null, ['class' => 'form-control']) !!}
@@ -42,12 +43,21 @@
             </div>
 
             <div class="form-group">
-                {!! Form::submit('Update user', ['class' => 'btn btn-primary']) !!}
-            </div>
-                </div>
+                {!! Form::submit('Update user', ['class' => 'btn btn-primary col-sm-6']) !!}
+
             </div>
 
             {!! Form::close() !!}
+
+            {!! Form::open(['method' => 'DELETE' ,'action' => ['AdminUserController@destroy', $user->id ]]) !!}
+
+                <div class="form-group">
+                    {!! Form::submit('Delete user', ['class' => 'btn btn-danger col-sm-6']) !!}
+                </div>
+
+            {!! Form::close() !!}
+                </div>
+            </div>
 
             @include('includes.form_errors')
         </div>
