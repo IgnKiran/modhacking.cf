@@ -17,7 +17,6 @@
                         <th>Body</th>
                         <th>User</th>
                         <th>Category</th>
-                        <th>Content</th>
                         <th>Created</th>
                         <th>Updated</th>
                     </tr>
@@ -32,8 +31,7 @@
                                 <td><img height="25px" src="{{$post->photo ? $post->photo->file : 'http://placehold.it/400x400/'}}" alt=""></td>
                                 <td>{{$post->body}}</td>
                                 <td>{{$post->user['name']}}</td>
-                                <td>{{'-Under Construction-'}}</td>
-                                <td>{{'-Under Construction-'}}</td>
+                                <td>{{$post->category ? $post->category->name : "uncategorized"}}</td>
                                 <td>{{$post->created_at->diffForHumans()}}</td>
                                 <td>{{$post->updated_at->diffForHumans()}}</td>
                             </tr>
