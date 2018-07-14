@@ -106,10 +106,10 @@
                         <a href="#"><i class="fa fa-wrench fa-fw"></i> Posts<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
-                                <a href="#">View</a>
+                                <a href="{{route('posts.index')}}">View</a>
                             </li>
                             <li>
-                                <a href="#">Create</a>
+                                <a href="{{route('posts.create')}}">Create</a>
                             </li>
                         </ul>
                         <!-- /.nav-second-level -->
