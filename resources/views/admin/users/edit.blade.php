@@ -2,7 +2,7 @@
 @section('content')
     <div class="panel panel-default">
         <div class="panel-heading">
-            <i class="fa fa-users fa-fw"></i> Edit user - {{$user->name}}
+            <i class="fa fa-users fa-fw"></i> <b>Edit User</b> - {{$user->name}}
         </div>
         <div class="panel-body">
             <div class="row">

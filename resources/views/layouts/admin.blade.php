@@ -118,10 +118,10 @@
                         <a href="#"><i class="fa fa-wrench fa-fw"></i> Categories<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
-                                <a href="#">View</a>
+                                <a href="{{route('categories.index')}}">View</a>
                             </li>
                             <li>
-                                <a href="#">Create</a>
+                                <a href="{{route('categories.create')}}">Create</a>
                             </li>
                         </ul>
                         <!-- /.nav-second-level -->
