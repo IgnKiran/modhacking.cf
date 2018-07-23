@@ -5,16 +5,15 @@
             <i class="fa fa-users fa-fw"></i> Categories
         </div>
         <div class="panel-body">
-            @if(Session::has('deleted_user'))
-                <p class="bg-danger">{{session('deleted_user')}}</p>
+            @if(Session::has('deleted_category'))
+                <p class="bg-danger">{{session('deleted_category')}}</p>
             @endif
             <div class="row">
                 <div class="col-sm-4">
                     {!! Form::open(['method' => 'POST' ,'action' => 'AdminCategoriesController@store']) !!}
 
                     <div class="form-group">
-                        {!! Form::label('name', 'Category') !!}
-                        {!! Form::text('name', '', ['class' => 'form-control']) !!}
+                        {!! Form::text('name', '', ['placeholder' => 'Enter category', 'class' => 'form-control']) !!}
                     </div>
 
                     <div class="form-group">

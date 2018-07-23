@@ -5,7 +5,9 @@ elixir(function(mix){
             'bootstrap.css',
             'font-awesome.css',
             'metisMenu.css',
-            'sb-admin-2.css'
+            'sb-admin-2.css',
+            'blog-home.css',
+            'style.css'
         ],'./public/css/libs.css')
         .scripts([
             'jquery.js',

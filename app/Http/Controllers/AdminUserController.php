@@ -58,7 +58,7 @@ class AdminUserController extends Controller
 
              $input['photo_id'] = $photo->id;
          }
-
+        // i think this case is ok since it will not again bring up that iuser for that empty password field would be re hashed
          $input['password'] = bcrypt($request->password);
          User::create($input);
 
@@ -108,6 +108,7 @@ class AdminUserController extends Controller
             $input = $request->except('password');
         } else {
             $input = $request->all();
+            $input['password'] = bcrypt($request->password);
         }
 
         if ($file = $request->file('photo_id')) {
@@ -117,7 +118,7 @@ class AdminUserController extends Controller
             $input['photo_id'] = $photo->id;
         }
 
-        $input['password'] = bcrypt($request->password);
+
         $user->update($input);
         return redirect('/admin/users');
     }

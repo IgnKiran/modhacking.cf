@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Support\Facades\Hash;
 
 class User extends Authenticatable
 {
@@ -27,6 +28,11 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
+    // password hash if needed
+    public function setPasswordAttribute($password){
+        $this->attributes['password'] = Hash::needsRehash($password) ? Hash::make($password) : $password;
+    }
+
     // Relationship with Role; User roles
     public function role(){
         return $this->belongsTo('App\Role');
@@ -46,4 +52,18 @@ class User extends Authenticatable
         }
         return false;
     }
+
+//    public function userId(){
+//        return $this->id;
+//    }
+//
+//    public function hasRole() {
+//        $categories = Category::all();
+//        foreach ($categories as $category){
+//            if ($this->role->name == $category->name && $this->is_active == 1){
+//                return true;
+//            }
+//        }
+//        return false;
+//    }
 }

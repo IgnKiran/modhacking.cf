@@ -21,6 +21,10 @@ class Admin
             if (Auth::user()->isAdmin()){
                 return $next($request);
             }
+//            if (Auth::user()->hasRole()){
+//                return $next($request);
+//            }
+//            return $next($request);
         }
         return redirect('/');
     }

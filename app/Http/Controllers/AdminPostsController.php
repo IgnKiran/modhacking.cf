@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Category;
+use App\Comment;
 use App\Http\Requests\PostCreateRequest;
 use App\Photo;
 use App\Post;
@@ -21,7 +22,8 @@ class AdminPostsController extends Controller
     {
         //
         $posts = Post::all();
-        return view('admin.posts.index', compact('posts'));
+        $comments_count = Comment::pluck('post_id')->count();
+        return view('admin.posts.index', compact('posts','comments_count'));
     }
 
     /**
@@ -122,5 +124,11 @@ class AdminPostsController extends Controller
         unlink(public_path().$post->photo->file);
         $post->delete();
         return redirect('/admin/posts');
+    }
+
+    public function post($id){
+        $post = Post::findOrFail($id);
+        $comments = $post->comments()->whereIsActive(1)->get();
+        return view('post',compact('post','comments'));
     }
 }
